@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Plot Sizes & Pricing | Paras Estate</title>
+    <meta name="description" content="Explore available residential plots from 73 to 179 Sq. Yds. at Paras Estate. Stilt + 4 floors authorized with separate floor registry.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-symbol">P</div>
+                    <div class="brand-name">
+                        <span class="brand-title">PARAS ESTATE</span>
+                        <span class="brand-sub">BY PARAS BUILDTECH</span>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="plots.html" class="nav-link active">Plot Explorer</a></li>
+                    <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                    <li><a href="location.html" class="nav-link">Location</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn btn-outline btn-sm" onclick="openBrochureModal()">
+                        <i class="bi bi-download"></i> E-Brochure
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="openEnquireModal()">
+                        <i class="bi bi-telephone-outbound"></i> Enquire Now
+                    </button>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="brand-logo">
+                <div class="brand-symbol">P</div>
+                <div class="brand-name">
+                    <span class="brand-title">PARAS ESTATE</span>
+                </div>
+            </div>
+            <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;" id="drawerClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+            <li><a href="index.html" class="mobile-nav-link" style="font-size: 1.1rem;">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
+            <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem; color: var(--primary-gold);">Plot Explorer</a></li>
+            <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem;">Amenities</a></li>
+            <li><a href="location.html" class="mobile-nav-link" style="font-size: 1.1rem;">Location</a></li>
+            <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem;">Contact Us</a></li>
+        </ul>
+    </aside>
+
+    <!-- Subpage Hero Banner -->
+    <section style="padding: 10rem 0 5rem 0; background: linear-gradient(to bottom, rgba(248, 250, 252, 0.85), #ffffff), url('assets/images/villa.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-tag"><i class="bi bi-grid-3x3-gap-fill"></i> HOMESITE SELECTION</span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.2rem; color: var(--text-primary);">
+                    Residential Plots & <span class="gold-text">Floor Guidelines</span>
+                </h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
+                    Choose from exclusive 200 Sq. Yds up to 280 Sq. Yds. plots across 25 acres of master planned gated township development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Villa Render Showcase Card -->
+    <section style="padding: 5rem 0; background: #ffffff;">
+        <div class="container">
+            <div class="glass-card" style="padding: 3rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center;">
+                    <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+                        <img src="assets/images/villa.jpg" alt="Luxury Villa Architecture Render" style="width: 100%; height: 380px; object-fit: cover;">
+                    </div>
+                    <div>
+                        <span class="section-tag">ARCHITECTURAL POTENTIAL</span>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Stilt + 4 Floor <span class="gold-text">Villa Concept</span></h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7;">
+                            Visualize your custom 4-storey luxury villa with private stilt parking for 4+ luxury cars, high-speed elevator provision, floor-wise sunlit balconies, and a terrace garden lounge.
+                        </p>
+                        <button class="btn btn-primary" onclick="openEnquireModal('Stilt + 4 Villa Layout Consultation')">
+                            <i class="bi bi-file-earmark-code"></i> Request Layout Consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Plot Explorer -->
+    <section class="plot-explorer" style="padding: 4rem 0 7rem 0;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Available <span class="gold-text">Plot Inventory</span></h2>
+                <div class="plot-filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All Sizes</button>
+                    <button class="filter-btn" data-filter="200-sqyd">200 Sq. Yds</button>
+                    <button class="filter-btn" data-filter="225-sqyd">225 Sq. Yds</button>
+                    <button class="filter-btn" data-filter="250-sqyd">250 Sq. Yds</button>
+                    <button class="filter-btn" data-filter="280-sqyd">280 Sq. Yds</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Plot Grid -->
+            <div class="plot-grid" id="plotGrid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1.2rem;">
+                        <div class="brand-symbol">P</div>
+                        <div class="brand-name">
+                            <span class="brand-title">PARAS ESTATE</span>
+                            <span class="brand-sub">PARAS BUILDTECH</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
+                    </p>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">
+                        <i class="bi bi-geo-alt"></i> 11th Floor, Paras Twin Towers (Tower B), Sec-54, Golf Course Road, Gurugram, Haryana - 122002
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Quick Navigation</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="plots.html">Plot Explorer</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="location.html">Location Advantages</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Tools & Features</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#calculator">EMI Calculator</a></li>
+                        <li><a href="index.html#calculator">5-Year ROI Projection</a></li>
+                        <li><a href="index.html#gallery">3D Architectural Gallery</a></li>
+                        <li><a href="javascript:void(0)" onclick="openBrochureModal()">Download E-Brochure</a></li>
+                        <li><a href="javascript:void(0)" onclick="openEnquireModal()">Book Site Visit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Corporate Contact</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> +91 124 456 1500</div>
+                        <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i> info@parasbuildtech.com</div>
+                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sat: 9:30 AM - 6:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Paras Buildtech India Pvt. Ltd. All rights reserved.</div>
+                <div>Disclaimer: Artistic impressions only. M/s Rapid Buildtech Pvt. Ltd. / M/s Paras Buildtech India Private Limited.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="enquireModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Plot Inquiry</h3>
+            <form id="enquireForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" placeholder="e.g. Vikram Singh" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Download E-Brochure</h3>
+            <form id="brochureForm">
+                <div class="form-group">
+                    <label class="form-label">WhatsApp Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Download PDF</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

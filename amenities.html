@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World-Class Amenities | Paras Estate</title>
+    <meta name="description" content="Discover world-class township amenities at Paras Estate: Grand Clubhouse, swimming pool, central botanical parks, sports arenas, and 3-tier security.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-symbol">P</div>
+                    <div class="brand-name">
+                        <span class="brand-title">PARAS ESTATE</span>
+                        <span class="brand-sub">BY PARAS BUILDTECH</span>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="plots.html" class="nav-link">Plot Explorer</a></li>
+                    <li><a href="amenities.html" class="nav-link active">Amenities</a></li>
+                    <li><a href="location.html" class="nav-link">Location</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn btn-outline btn-sm" onclick="openBrochureModal()">
+                        <i class="bi bi-download"></i> E-Brochure
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="openEnquireModal()">
+                        <i class="bi bi-telephone-outbound"></i> Enquire Now
+                    </button>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="brand-logo">
+                <div class="brand-symbol">P</div>
+                <div class="brand-name">
+                    <span class="brand-title">PARAS ESTATE</span>
+                </div>
+            </div>
+            <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;" id="drawerClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+            <li><a href="index.html" class="mobile-nav-link" style="font-size: 1.1rem;">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
+            <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem;">Plot Explorer</a></li>
+            <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem; color: var(--primary-gold);">Amenities</a></li>
+            <li><a href="location.html" class="mobile-nav-link" style="font-size: 1.1rem;">Location</a></li>
+            <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem;">Contact Us</a></li>
+        </ul>
+    </aside>
+
+    <!-- Subpage Hero Banner -->
+    <section style="padding: 10rem 0 5rem 0; background: linear-gradient(to bottom, rgba(248, 250, 252, 0.85), #ffffff), url('assets/images/clubhouse.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-tag"><i class="bi bi-star"></i> TOWNSHIP LIFESTYLE</span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.2rem; color: var(--text-primary);">
+                    World-Class <span class="gold-text">Amenities & Enclaves</span>
+                </h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
+                    Experience holistic luxury living featuring a grand multi-level clubhouse, central botanical gardens, active sports arenas, and 3-tier security.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rich Visual Feature Cards Section -->
+    <section style="padding: 6rem 0; background: #ffffff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem;">
+                
+                <!-- Visual Card 1: Clubhouse & Pool -->
+                <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div style="height: 240px; overflow: hidden; position: relative;">
+                        <img src="assets/images/clubhouse.jpg" alt="Grand Clubhouse and Infinity Pool" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                        <span class="plot-badge" style="position: absolute; top: 1rem; left: 1rem; right: auto; background: rgba(184, 134, 11, 0.9); color: #fff; border: none;">CLUB & LEISURE</span>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Grand Clubhouse & Pool</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+                            A multi-level architectural gem offering an infinity-edge swimming pool, heated lounge Jacuzzi, fine dining banquets, and executive cigar lounge.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; font-size: 0.8rem; color: var(--primary-gold); font-weight: 600;">
+                            <span><i class="bi bi-check-circle-fill"></i> Heated Jacuzzi</span> • 
+                            <span><i class="bi bi-check-circle-fill"></i> Banquet Hall</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Card 2: Central Botanical Park -->
+                <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div style="height: 240px; overflow: hidden; position: relative;">
+                        <img src="assets/images/park.jpg" alt="Central Botanical Greens and Jogging Track" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                        <span class="plot-badge" style="position: absolute; top: 1rem; left: 1rem; right: auto; background: rgba(5, 150, 105, 0.9); color: #fff; border: none;">NATURE & PARKS</span>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Botanical Greens & Trails</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+                            Over 50% open green cover featuring a 3.2 KM rubberized jogging circuit, outdoor zen meditation pavilion, and serene water lily ponds.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; font-size: 0.8rem; color: var(--accent-green); font-weight: 600;">
+                            <span><i class="bi bi-check-circle-fill"></i> 3.2 KM Circuit</span> • 
+                            <span><i class="bi bi-check-circle-fill"></i> Zen Pavilion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Card 3: Sports & Active Enclave -->
+                <div class="glass-card" style="padding: 0; overflow: hidden;">
+                    <div style="height: 240px; overflow: hidden; position: relative;">
+                        <img src="assets/images/Meerut Estate Broucher_A4_compressed_page-0025.jpg" alt="Sports Enclave and Basketball Court" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                        <span class="plot-badge" style="position: absolute; top: 1rem; left: 1rem; right: auto; background: rgba(37, 99, 235, 0.9); color: #fff; border: none;">SPORTS ARENA</span>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Sports & Active Enclave</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+                            Outdoor floodlit basketball court, volleyball court, professional cricket practice pitch, open gym, and indoor billiards & table tennis.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; font-size: 0.8rem; color: #2563eb; font-weight: 600;">
+                            <span><i class="bi bi-check-circle-fill"></i> Basketball</span> • 
+                            <span><i class="bi bi-check-circle-fill"></i> Cricket Pitch</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Complete Brochure Amenities Grid: A Paradise Of Delights -->
+            <div style="margin-top: 5rem;">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <span class="section-tag">A PARADISE OF DELIGHTS</span>
+                    <h2 class="section-title">Complete Township <span class="gold-text">Amenities Inventory</span></h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-building-gear"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Grand First Clubhouse</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-water"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Swimming Pool</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-bank"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Grand Temple Complex</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-cup-hot"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Restaurant & Terrace Cafe</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Modern Gymnasium</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-brightness-high"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Yoga & Aerobics Studio</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Landscaped Garden & Play Mount</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Kids Play Area & Pet Park</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-dribbble"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Basketball & Volleyball Court</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Cricket Practice Pitch</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-mic"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Open Air Amphitheatre</div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink: 0;">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+                        <div style="font-weight: 600; font-size: 0.95rem;">Serene Eco Water Pond</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1.2rem;">
+                        <div class="brand-symbol">P</div>
+                        <div class="brand-name">
+                            <span class="brand-title">PARAS ESTATE</span>
+                            <span class="brand-sub">PARAS BUILDTECH</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
+                    </p>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">
+                        <i class="bi bi-geo-alt"></i> 11th Floor, Paras Twin Towers (Tower B), Sec-54, Golf Course Road, Gurugram, Haryana - 122002
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Quick Navigation</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="plots.html">Plot Explorer</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="location.html">Location Advantages</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Tools & Features</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#calculator">EMI Calculator</a></li>
+                        <li><a href="index.html#calculator">5-Year ROI Projection</a></li>
+                        <li><a href="index.html#gallery">3D Architectural Gallery</a></li>
+                        <li><a href="javascript:void(0)" onclick="openBrochureModal()">Download E-Brochure</a></li>
+                        <li><a href="javascript:void(0)" onclick="openEnquireModal()">Book Site Visit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Corporate Contact</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> +91 124 456 1500</div>
+                        <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i> info@parasbuildtech.com</div>
+                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sat: 9:30 AM - 6:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Paras Buildtech India Pvt. Ltd. All rights reserved.</div>
+                <div>Disclaimer: Artistic impressions only. M/s Rapid Buildtech Pvt. Ltd. / M/s Paras Buildtech India Private Limited.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="enquireModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Enquire Amenities</h3>
+            <form id="enquireForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" placeholder="e.g. Sanya Mehta" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Download E-Brochure</h3>
+            <form id="brochureForm">
+                <div class="form-group">
+                    <label class="form-label">WhatsApp Mobile Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Download PDF</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

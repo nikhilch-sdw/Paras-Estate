@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Book Site Visit | Paras Estate</title>
+    <meta name="description" content="Contact Paras Buildtech for Paras Estate plot inquiries, schedule a VIP site visit, or request instant pricing quotes.">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-symbol">P</div>
+                    <div class="brand-name">
+                        <span class="brand-title">PARAS ESTATE</span>
+                        <span class="brand-sub">BY PARAS BUILDTECH</span>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="plots.html" class="nav-link">Plot Explorer</a></li>
+                    <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                    <li><a href="location.html" class="nav-link">Location</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn btn-outline btn-sm" onclick="openBrochureModal()">
+                        <i class="bi bi-download"></i> E-Brochure
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="openEnquireModal()">
+                        <i class="bi bi-telephone-outbound"></i> Enquire Now
+                    </button>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="brand-logo">
+                <div class="brand-symbol">P</div>
+                <div class="brand-name">
+                    <span class="brand-title">PARAS ESTATE</span>
+                </div>
+            </div>
+            <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;" id="drawerClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+            <li><a href="index.html" class="mobile-nav-link" style="font-size: 1.1rem;">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
+            <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem;">Plot Explorer</a></li>
+            <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem;">Amenities</a></li>
+            <li><a href="location.html" class="mobile-nav-link" style="font-size: 1.1rem;">Location</a></li>
+            <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem; color: var(--primary-gold);">Contact Us</a></li>
+        </ul>
+    </aside>
+
+    <!-- Subpage Hero Banner -->
+    <section style="padding: 10rem 0 5rem 0; background: linear-gradient(to bottom, rgba(248, 250, 252, 0.85), #ffffff), url('assets/images/hero.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-tag"><i class="bi bi-envelope-check"></i> GET IN TOUCH</span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.2rem; color: var(--text-primary);">
+                    Contact Us & <span class="gold-text">Book VIP Site Visit</span>
+                </h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
+                    Our dedicated luxury property advisors are ready to assist you with plot availability, layout consultations, and site visit arrangements.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Grid -->
+    <section style="padding: 6rem 0; background: #ffffff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem;">
+                
+                <!-- Contact Details -->
+                <div>
+                    <span class="section-tag">SALES & CORPORATE OFFICE</span>
+                    <h2 class="section-title">Reach Out <span class="gold-text">Directly</span></h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.7;">
+                        Visit our corporate sales lounge or connect via phone or WhatsApp for priority plot allotment details.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.8rem; margin-bottom: 2.5rem;">
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+                            <div style="width: 46px; height: 46px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; shrink: 0;">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Corporate Head Office</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                                    Paras Buildtech India Pvt. Ltd.<br>
+                                    11th Floor, Paras Twin Towers (Tower B)<br>
+                                    Sec-54, Golf Course Road, Gurugram - 122002
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+                            <div style="width: 46px; height: 46px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; shrink: 0;">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Direct Inquiry Phone</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                                    +91 124 456 1500<br>
+                                    Mon - Sat: 9:30 AM - 6:30 PM
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+                            <div style="width: 46px; height: 46px; border-radius: var(--radius-sm); background: rgba(184, 134, 11, 0.12); color: var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; shrink: 0;">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Official Email</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                                    info@parasbuildtech.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="glass-card" style="padding: 3rem; background: #f8fafc; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Schedule VIP Site Visit</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Select your preferred date and plot size choice to receive complimentary AC cab pickup and site consultation.
+                    </p>
+
+                    <form id="enquireForm">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-input" placeholder="e.g. Alok Verma" required>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-input" placeholder="alok@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preferred Plot Size</label>
+                            <select class="form-select">
+                                <option value="75">75 Sq. Yds (Executive Plot)</option>
+                                <option value="100" selected>100 Sq. Yds (Residency Plot)</option>
+                                <option value="125">125 Sq. Yds (Parkview Plot)</option>
+                                <option value="150">150 Sq. Yds (Signature Plot)</option>
+                                <option value="179">179 Sq. Yds (Royal Ambassador Plot)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; padding: 1.1rem;">
+                            <i class="bi bi-calendar-check-fill"></i> Confirm Site Visit Booking
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 1.2rem;">
+                        <div class="brand-symbol">P</div>
+                        <div class="brand-name">
+                            <span class="brand-title">PARAS ESTATE</span>
+                            <span class="brand-sub">PARAS BUILDTECH</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
+                    </p>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">
+                        <i class="bi bi-geo-alt"></i> 11th Floor, Paras Twin Towers (Tower B), Sec-54, Golf Course Road, Gurugram, Haryana - 122002
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Quick Navigation</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="plots.html">Plot Explorer</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="location.html">Location Advantages</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Tools & Features</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#calculator">EMI Calculator</a></li>
+                        <li><a href="index.html#calculator">5-Year ROI Projection</a></li>
+                        <li><a href="index.html#gallery">3D Architectural Gallery</a></li>
+                        <li><a href="javascript:void(0)" onclick="openBrochureModal()">Download E-Brochure</a></li>
+                        <li><a href="javascript:void(0)" onclick="openEnquireModal()">Book Site Visit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Corporate Contact</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> +91 124 456 1500</div>
+                        <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i> info@parasbuildtech.com</div>
+                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sat: 9:30 AM - 6:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Paras Buildtech India Pvt. Ltd. All rights reserved.</div>
+                <div>Disclaimer: Artistic impressions only. M/s Rapid Buildtech Pvt. Ltd. / M/s Paras Buildtech India Private Limited.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="enquireModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Inquiry</h3>
+            <form id="enquireForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" placeholder="e.g. Alok Verma" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <h3 style="font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 0.4rem;">Download E-Brochure</h3>
+            <form id="brochureForm">
+                <div class="form-group">
+                    <label class="form-label">WhatsApp Mobile Number *</label>
+                    <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Download PDF</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
