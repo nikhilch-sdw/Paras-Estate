@@ -86,62 +86,51 @@ function initNavigation() {
 /* ==========================================================================
    2. Interactive Plot Explorer
    ========================================================================== */
+/* ==========================================================================
+   2. Interactive Plot Explorer
+   ========================================================================== */
 const PLOT_DATA = [
     {
-        id: 'plot-200',
-        sizeCategory: '200-sqyd',
+        id: 'plot-206',
+        sizeCategory: '206-sqyd',
         title: 'Executive Villa Plot',
-        sqyd: '200 Sq. Yds.',
-        sqft: '1,800 Sq. Ft.',
-        dimensions: '30\' x 60\'',
+        sqyd: '206 Sq. Yds.',
+        sqft: '1,854 Sq. Ft.',
+        dimensions: '30\' x 61.8\'',
         floorPermission: 'Stilt + 4 Floors Approved',
         facing: 'East / North-East Facing',
         registry: 'Individual Floor Registry',
-        price: '₹ 1.25 Crore*',
+        price: '₹ 1.28 Crore*',
         badge: 'Selling Fast',
-        description: 'Ideal for bespoke low-rise floors or single-family executive homes with private stilt parking & terrace garden.'
+        description: 'Ideal for bespoke luxury low-rise floors or single-family executive homes with private stilt parking.'
     },
     {
-        id: 'plot-225',
-        sizeCategory: '225-sqyd',
+        id: 'plot-249',
+        sizeCategory: '249-sqyd',
         title: 'Premium Residency Plot',
-        sqyd: '225 Sq. Yds.',
-        sqft: '2,025 Sq. Ft.',
-        dimensions: '33\' x 61.3\'',
+        sqyd: '249 Sq. Yds.',
+        sqft: '2,241 Sq. Ft.',
+        dimensions: '35\' x 64.0\'',
         floorPermission: 'Stilt + 4 Floors Approved',
-        facing: 'North / East Facing',
+        facing: 'Central Park Facing',
         registry: 'Individual Floor Registry',
-        price: '₹ 1.45 Crore*',
-        badge: 'Popular Choice',
-        description: 'Versatile layout offering maximum floor space efficiency and high rental yield for multi-level luxury floors.'
+        price: '₹ 1.55 Crore*',
+        badge: 'Most Popular',
+        description: 'Spacious layout offering maximum floor space efficiency and high rental yield for multi-level luxury floors.'
     },
     {
-        id: 'plot-250',
-        sizeCategory: '250-sqyd',
-        title: 'Luxury Parkview Plot',
-        sqyd: '250 Sq. Yds.',
-        sqft: '2,250 Sq. Ft.',
-        dimensions: '35\' x 64.2\'',
-        floorPermission: 'Stilt + 4 Floors Approved',
-        facing: 'Overlooking Central Park',
-        registry: 'Individual Floor Registry',
-        price: '₹ 1.65 Crore*',
-        badge: 'Park Facing',
-        description: 'Prime location plot adjacent to central green trails and botanical gardens. Unobstructed views & serene surroundings.'
-    },
-    {
-        id: 'plot-280',
-        sizeCategory: '280-sqyd',
+        id: 'plot-272',
+        sizeCategory: '272-sqyd',
         title: 'Royal Ambassador Plot',
-        sqyd: '280 Sq. Yds.',
-        sqft: '2,520 Sq. Ft.',
-        dimensions: '40\' x 63\'',
+        sqyd: '272 Sq. Yds.',
+        sqft: '2,448 Sq. Ft.',
+        dimensions: '40\' x 61.2\'',
         floorPermission: 'Stilt + 4 Floors Approved',
         facing: 'Grand Boulevard Facing',
         registry: 'Individual Floor Registry',
-        price: '₹ 1.88 Crore*',
+        price: '₹ 1.78 Crore*',
         badge: 'Ultra Luxury',
-        description: 'Flagship spacious plot designed for opulent mega residences or multi-tenant luxury apartment floors.'
+        description: 'Flagship wide-frontage plot designed for opulent mega residences or multi-tenant luxury apartment floors.'
     }
 ];
 
@@ -163,38 +152,40 @@ function initPlotExplorer() {
             card.className = 'plot-card';
             card.innerHTML = `
                 <span class="plot-badge">${plot.badge}</span>
-                <div class="plot-card-body">
-                    <h3 class="plot-title">${plot.title}</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.875rem;">${plot.description}</p>
-                    
-                    <ul class="plot-specs-list">
-                        <li class="spec-item">
+                <div>
+                    <div class="plot-card-header">
+                        <h3 class="plot-title">${plot.title}</h3>
+                        <p class="plot-desc">${plot.description}</p>
+                    </div>
+
+                    <div class="plot-specs-grid">
+                        <div class="spec-block">
                             <span class="spec-label">Area Size</span>
                             <span class="spec-value">${plot.sqyd}</span>
-                        </li>
-                        <li class="spec-item">
+                        </div>
+                        <div class="spec-block">
                             <span class="spec-label">Built Up Area</span>
                             <span class="spec-value">${plot.sqft}</span>
-                        </li>
-                        <li class="spec-item">
+                        </div>
+                        <div class="spec-block">
                             <span class="spec-label">Dimensions</span>
                             <span class="spec-value">${plot.dimensions}</span>
-                        </li>
-                        <li class="spec-item">
-                            <span class="spec-label">Permissions</span>
-                            <span class="spec-value">${plot.floorPermission}</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="plot-card-footer">
-                        <div class="plot-price-tag">
-                            <span class="price-label">Starting Price</span>
-                            <span class="price-amount">${plot.price}</span>
                         </div>
-                        <button class="btn btn-primary btn-sm" onclick="openEnquireModal('${plot.title} (${plot.sqyd})')">
-                            <i class="bi bi-send"></i> Enquire Plot
-                        </button>
+                        <div class="spec-block">
+                            <span class="spec-label">Permissions</span>
+                            <span class="spec-value">Stilt + 4 Floors</span>
+                        </div>
                     </div>
+                </div>
+
+                <div class="plot-card-footer">
+                    <div>
+                        <span class="price-label">Starting Price</span>
+                        <div class="price-amount">${plot.price}</div>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="openEnquireModal('${plot.title} (${plot.sqyd})')">
+                        <i class="bi bi-send-fill"></i> Enquire Plot
+                    </button>
                 </div>
             `;
             plotGrid.appendChild(card);
