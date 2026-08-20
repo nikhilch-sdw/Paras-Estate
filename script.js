@@ -143,8 +143,8 @@ function initPlotExplorer() {
     function renderPlots(filter = 'all') {
         plotGrid.innerHTML = '';
 
-        const filtered = filter === 'all' 
-            ? PLOT_DATA 
+        const filtered = filter === 'all'
+            ? PLOT_DATA
             : PLOT_DATA.filter(p => p.sizeCategory === filter);
 
         filtered.forEach(plot => {
@@ -287,38 +287,267 @@ function initEMICalculator() {
 }
 
 /* ==========================================================================
-   4. Gallery Lightbox
+   4. Gallery Grid & Interactive Carousel Switcher
    ========================================================================== */
 function initGalleryLightbox() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightboxModal');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const galleryGridFooter = document.getElementById('galleryGridFooter');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const filterBtns = document.querySelectorAll('.gallery-filter-tabs .filter-btn');
+    const btnToggleGallery = document.getElementById('btnToggleGallery');
+    const galleryHiddenCount = document.getElementById('galleryHiddenCount');
 
-    if (!lightbox) return;
+    // Inline Carousel DOM elements
+    const carouselView = document.getElementById('galleryCarouselView');
+    const btnBackToGrid = document.getElementById('btnBackToGrid');
+    const inlineImg = document.getElementById('inlineCarouselImg');
+    const inlineTitle = document.getElementById('inlineCarouselTitle');
+    const inlineCategory = document.getElementById('inlineCarouselCategory');
+    const inlineCounter = document.getElementById('inlineCarouselCounter');
+    const inlinePrev = document.getElementById('inlinePrev');
+    const inlineNext = document.getElementById('inlineNext');
+    const inlineThumbsTrack = document.getElementById('inlineThumbsTrack');
+    const inlinePlayPause = document.getElementById('inlinePlayPause');
+    const inlineZoomIn = document.getElementById('inlineZoomIn');
+    const inlineZoomOut = document.getElementById('inlineZoomOut');
+    const inlineZoomReset = document.getElementById('inlineZoomReset');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            if (img) {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+    let currentIndex = 0;
+    let isExpanded = false;
+    let activeFilter = 'all';
+    let isAutoPlaying = false;
+    let autoPlayTimer = null;
+    let inlineScale = 1.0;
+
+    if (!galleryItems.length) return;
+
+    // Filter Tabs handler
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            activeFilter = btn.getAttribute('data-gallery-filter');
+            applyFilter();
+            if (carouselView && carouselView.style.display !== 'none') {
+                currentIndex = 0;
+                updateCarouselView();
             }
         });
     });
 
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+    function applyFilter() {
+        let visibleCount = 0;
+
+        galleryItems.forEach((item) => {
+            const itemCat = item.getAttribute('data-category');
+            const matches = activeFilter === 'all' || itemCat === activeFilter;
+
+            if (matches) {
+                if (isExpanded || visibleCount < 6) {
+                    item.style.display = 'block';
+                    item.classList.remove('gallery-hidden');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('gallery-hidden');
+                }
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        if (btnToggleGallery) {
+            const hiddenItems = galleryItems.filter(item => {
+                const itemCat = item.getAttribute('data-category');
+                const matches = activeFilter === 'all' || itemCat === activeFilter;
+                return matches && item.classList.contains('gallery-hidden');
+            });
+
+            if (hiddenItems.length > 0) {
+                if (galleryGridFooter) galleryGridFooter.style.display = 'block';
+                btnToggleGallery.style.display = 'inline-flex';
+                if (galleryHiddenCount) galleryHiddenCount.textContent = hiddenItems.length;
+                btnToggleGallery.innerHTML = `<i class="bi bi-grid-3x3-gap-fill"></i> View All Photos (${hiddenItems.length} More)`;
+            } else if (isExpanded && activeFilter === 'all') {
+                if (galleryGridFooter) galleryGridFooter.style.display = 'block';
+                btnToggleGallery.style.display = 'inline-flex';
+                btnToggleGallery.innerHTML = `<i class="bi bi-chevron-up"></i> Show Less`;
+            } else {
+                if (hiddenItems.length === 0 && !isExpanded) {
+                    if (galleryGridFooter) galleryGridFooter.style.display = 'none';
+                }
+            }
+        }
+    }
+
+    if (btnToggleGallery) {
+        btnToggleGallery.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            applyFilter();
+        });
+    }
+
+    function getActiveItems() {
+        return galleryItems.filter(item => {
+            const itemCat = item.getAttribute('data-category');
+            return activeFilter === 'all' || itemCat === activeFilter;
+        });
+    }
+
+    // Switch from Grid to Carousel View
+    function switchToCarousel(indexInActive) {
+        const activeList = getActiveItems();
+        if (indexInActive < 0 || indexInActive >= activeList.length) return;
+
+        currentIndex = indexInActive;
+
+        if (galleryGrid) galleryGrid.style.display = 'none';
+        if (galleryGridFooter) galleryGridFooter.style.display = 'none';
+        if (carouselView) {
+            carouselView.style.display = 'block';
+            carouselView.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        updateCarouselView();
+    }
+
+    // Switch Back to Grid View
+    function switchToGrid() {
+        stopAutoPlay();
+        if (carouselView) carouselView.style.display = 'none';
+        if (galleryGrid) galleryGrid.style.display = 'grid';
+        applyFilter();
+    }
+
+    if (btnBackToGrid) {
+        btnBackToGrid.addEventListener('click', switchToGrid);
+    }
+
+    function updateCarouselView() {
+        const activeList = getActiveItems();
+        if (!activeList.length) return;
+
+        resetInlineZoom();
+
+        const activeItem = activeList[currentIndex];
+        const img = activeItem.querySelector('img');
+        const caption = activeItem.querySelector('.gallery-caption')?.textContent || 'Gallery Photo';
+        const tag = activeItem.querySelector('.gallery-tag')?.textContent || 'Paras Estate';
+
+        if (inlineImg) {
+            inlineImg.style.opacity = '0';
+            setTimeout(() => {
+                inlineImg.src = img.src;
+                inlineImg.alt = caption;
+                inlineImg.style.opacity = '1';
+            }, 150);
+        }
+
+        if (inlineTitle) inlineTitle.textContent = caption;
+        if (inlineCategory) inlineCategory.textContent = tag;
+        if (inlineCounter) inlineCounter.textContent = `${currentIndex + 1} / ${activeList.length}`;
+
+        renderCarouselThumbs(activeList);
+    }
+
+    function renderCarouselThumbs(activeList) {
+        if (!inlineThumbsTrack) return;
+        inlineThumbsTrack.innerHTML = '';
+
+        activeList.forEach((item, idx) => {
+            const img = item.querySelector('img');
+            const thumb = document.createElement('div');
+            thumb.className = `lightbox-thumb ${idx === currentIndex ? 'active' : ''}`;
+            thumb.innerHTML = `<img src="${img.src}" alt="Thumb ${idx + 1}">`;
+            thumb.addEventListener('click', () => {
+                currentIndex = idx;
+                updateCarouselView();
+            });
+            inlineThumbsTrack.appendChild(thumb);
+        });
+
+        const activeThumb = inlineThumbsTrack.children[currentIndex];
+        if (activeThumb) {
+            activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+    }
+
+    function carouselPrev() {
+        const activeList = getActiveItems();
+        if (!activeList.length) return;
+        currentIndex = (currentIndex - 1 + activeList.length) % activeList.length;
+        updateCarouselView();
+    }
+
+    function carouselNext() {
+        const activeList = getActiveItems();
+        if (!activeList.length) return;
+        currentIndex = (currentIndex + 1) % activeList.length;
+        updateCarouselView();
+    }
+
+    if (inlinePrev) inlinePrev.addEventListener('click', carouselPrev);
+    if (inlineNext) inlineNext.addEventListener('click', carouselNext);
+
+    // Auto Play Slideshow
+    function toggleAutoPlay() {
+        if (isAutoPlaying) {
+            stopAutoPlay();
+        } else {
+            startAutoPlay();
+        }
+    }
+
+    function startAutoPlay() {
+        isAutoPlaying = true;
+        if (inlinePlayPause) inlinePlayPause.innerHTML = '<i class="bi bi-pause-fill"></i>';
+        autoPlayTimer = setInterval(carouselNext, 3000);
+    }
+
+    function stopAutoPlay() {
+        isAutoPlaying = false;
+        if (inlinePlayPause) inlinePlayPause.innerHTML = '<i class="bi bi-play-fill"></i>';
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    if (inlinePlayPause) inlinePlayPause.addEventListener('click', toggleAutoPlay);
+
+    // Zoom Controls
+    function applyInlineZoom() {
+        if (inlineImg) inlineImg.style.transform = `scale(${inlineScale})`;
+    }
+
+    function resetInlineZoom() {
+        inlineScale = 1.0;
+        applyInlineZoom();
+    }
+
+    if (inlineZoomIn) inlineZoomIn.addEventListener('click', () => { if (inlineScale < 2.5) { inlineScale += 0.25; applyInlineZoom(); } });
+    if (inlineZoomOut) inlineZoomOut.addEventListener('click', () => { if (inlineScale > 0.6) { inlineScale -= 0.25; applyInlineZoom(); } });
+    if (inlineZoomReset) inlineZoomReset.addEventListener('click', resetInlineZoom);
+
+    // Click on any Grid Item switches to Carousel View focused on that item!
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const activeList = getActiveItems();
+            const idxInActive = activeList.indexOf(item);
+            if (idxInActive !== -1) {
+                switchToCarousel(idxInActive);
+            }
+        });
     });
 
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+    // Keyboard support for Carousel View
+    document.addEventListener('keydown', (e) => {
+        if (!carouselView || carouselView.style.display === 'none') return;
+        if (e.key === 'ArrowLeft') carouselPrev();
+        if (e.key === 'ArrowRight') carouselNext();
+        if (e.key === 'Escape') switchToGrid();
     });
+
+    // Initial Filter setup
+    applyFilter();
 }
 
 /* ==========================================================================
@@ -403,7 +632,7 @@ function initModalForms() {
 }
 
 // Global modal helpers
-window.openEnquireModal = function(plotTitle = '') {
+window.openEnquireModal = function (plotTitle = '') {
     const enquireModal = document.getElementById('enquireModal');
     const modalTitle = document.getElementById('enquireModalPlotName');
     if (plotTitle && modalTitle) {
@@ -415,7 +644,7 @@ window.openEnquireModal = function(plotTitle = '') {
     }
 };
 
-window.openBrochureModal = function() {
+window.openBrochureModal = function () {
     const brochureModal = document.getElementById('brochureModal');
     if (brochureModal) {
         brochureModal.classList.add('active');
@@ -435,7 +664,7 @@ function showToast(message, duration = 4000) {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.innerHTML = `<i class="bi bi-check-circle-fill" style="color: var(--primary-gold); font-size: 1.2rem;"></i> <span>${message}</span>`;
-    
+
     container.appendChild(toast);
 
     setTimeout(() => {
@@ -449,7 +678,7 @@ function showToast(message, duration = 4000) {
 }
 
 // Hero Banner Form Submission Handler
-window.handleHeroFormSubmit = function(e) {
+window.handleHeroFormSubmit = function (e) {
     e.preventDefault();
     const nameInput = document.getElementById('heroName');
     const phoneInput = document.getElementById('heroPhone');
