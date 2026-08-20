@@ -456,3 +456,33 @@ function showToast(message, duration = 4000) {
         setTimeout(() => toast.remove(), 400);
     }, duration);
 }
+
+// Hero Banner Form Submission Handler
+window.handleHeroFormSubmit = function(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('heroName');
+    const phoneInput = document.getElementById('heroPhone');
+    const addressInput = document.getElementById('heroAddress');
+
+    const name = nameInput ? nameInput.value.trim() : 'Valued Client';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Submitting...';
+    }
+
+    setTimeout(() => {
+        showToast(`Thank you, ${name}! Your enquiry has been received. Our sales team will call you at ${phone}.`);
+        if (e.target) e.target.reset();
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Enquiry Submitted!';
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="bi bi-send-fill"></i> Get Instant Callback';
+            }, 3000);
+        }
+    }, 1000);
+};
+

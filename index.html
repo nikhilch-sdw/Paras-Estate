@@ -102,51 +102,93 @@
          ========================================================================== -->
     <section class="hero" id="hero">
         <div class="hero-bg">
-            <img src="assets/images/hero.jpg" alt="Paras Estate Luxury Entrance Boulevard">
+            <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/images/hero.jpg">
+                <source src="assets/videos/hero.mp4" type="video/mp4">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="hero-overlay"></div>
 
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="section-tag">
-                        <i class="bi bi-star-fill"></i> LUXURY PLOTTED TOWNSHIP • PARAS BUILDTECH
-                    </span>
+            <div class="hero-grid">
+                <!-- Left Side Content -->
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <span class="section-tag">
+                            <i class="bi bi-star-fill"></i> LUXURY PLOTTED TOWNSHIP • PARAS BUILDTECH
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Paras Estate – Craft Your Legacy On <span class="gold-text">Prime Land</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Paras Estate isn’t just a premium plotted development—it’s a blank canvas for your biggest dreams. Open land meets endless possibilities with Stilt + 4 floors construction authorization, 100% floor-wise registry, gated 3-tier security, and world-class infrastructure.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#plots" class="btn btn-primary">
+                            <i class="bi bi-grid-3x3-gap-fill"></i> Explore Available Plots
+                        </a>
+                        <button class="btn btn-outline" onclick="openBrochureModal()">
+                            <i class="bi bi-file-earmark-pdf"></i> Download E-Brochure
+                        </button>
+                    </div>
+
+                    <div class="hero-stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">25 Acres</span>
+                            <span class="stat-label">Master Planned Development</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200 - 280</span>
+                            <span class="stat-label">Plot Sizes (Sq. Yds)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200</span>
+                            <span class="stat-label">Exclusive Limited Plots</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+ Years</span>
+                            <span class="stat-label">Trusted Business Legacy</span>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 class="hero-title">
-                    Paras Estate – Craft Your Legacy On <span class="gold-text">Prime Land</span>
-                </h1>
+                <!-- Right Side Form -->
+                <div class="hero-right">
+                    <div class="hero-form-card">
+                        <div class="hero-form-header">
+                            <span class="form-badge"><i class="bi bi-lightning-charge-fill"></i> INSTANT CALLBACK</span>
+                            <h3 class="hero-form-title">Book VIP Site Visit</h3>
+                            <p class="hero-form-subtitle">Register to receive official brochure, price sheet & site map</p>
+                        </div>
 
-                <p class="hero-description">
-                    Paras Estate isn’t just a premium plotted development—it’s a blank canvas for your biggest dreams. Open land meets endless possibilities with Stilt + 4 floors construction authorization, 100% floor-wise registry, gated 3-tier security, and world-class infrastructure.
-                </p>
+                        <form id="heroBannerForm" class="hero-form" onsubmit="handleHeroFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="heroName" class="form-label"><i class="bi bi-person-fill"></i> Full Name *</label>
+                                <input type="text" id="heroName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                            </div>
 
-                <div class="hero-actions">
-                    <a href="#plots" class="btn btn-primary">
-                        <i class="bi bi-grid-3x3-gap-fill"></i> Explore Available Plots
-                    </a>
-                    <button class="btn btn-outline" onclick="openBrochureModal()">
-                        <i class="bi bi-file-earmark-pdf"></i> Download E-Brochure
-                    </button>
-                </div>
+                            <div class="form-group">
+                                <label for="heroPhone" class="form-label"><i class="bi bi-telephone-fill"></i> Phone Number *</label>
+                                <input type="tel" id="heroPhone" class="form-input" placeholder="e.g. +91 98765 43210" pattern="[0-9+\s-]{10,15}" required>
+                            </div>
 
-                <div class="hero-stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">25 Acres</span>
-                        <span class="stat-label">Master Planned Development</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">200 - 280</span>
-                        <span class="stat-label">Plot Sizes (Sq. Yds)</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">200</span>
-                        <span class="stat-label">Exclusive Limited Plots</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+ Years</span>
-                        <span class="stat-label">Trusted Business Legacy</span>
+                            <div class="form-group">
+                                <label for="heroAddress" class="form-label"><i class="bi bi-geo-alt-fill"></i> Address *</label>
+                                <textarea id="heroAddress" class="form-input form-textarea" placeholder="e.g. Sector 54, Golf Course Rd, Gurugram" rows="2" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block hero-submit-btn">
+                                <i class="bi bi-send-fill"></i> Get Instant Callback
+                            </button>
+
+                            <div class="form-privacy">
+                                <i class="bi bi-shield-lock-fill"></i> 100% Privacy Guaranteed • Direct Developer Enquiry
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
