@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEMICalculator();
     initGalleryLightbox();
     initModalForms();
+    initFAQAccordion();
 });
 
 /* ==========================================================================
@@ -705,4 +706,35 @@ window.handleHeroFormSubmit = function (e) {
         }
     }, 1000);
 };
+
+/* ==========================================================================
+   6. FAQ Accordion Functionality
+   ========================================================================== */
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (!questionBtn || !answer) return;
+
+        questionBtn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                if (otherAnswer) otherAnswer.style.display = 'none';
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+                answer.style.display = 'block';
+            }
+        });
+    });
+}
+
 
