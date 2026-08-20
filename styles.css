@@ -186,6 +186,19 @@ img {
     transform: translateY(-2px);
 }
 
+.btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background: #20ba5a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+}
+
 .btn-sm {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
@@ -611,6 +624,38 @@ img {
     padding: 0.95rem 1.5rem;
     font-size: 1rem;
     margin-top: 0.5rem;
+}
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0.85rem 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.form-divider::before {
+    margin-right: 0.75rem;
+}
+
+.form-divider::after {
+    margin-left: 0.75rem;
+}
+
+.hero-whatsapp-btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    margin-top: 0;
 }
 
 .form-privacy {
