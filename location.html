@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="assets/logo/paras-logo.png">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=3.1">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3.2">
 </head>
 
 <body>
@@ -70,15 +70,26 @@
             </button>
         </div>
 
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
-            <li><a href="index.html" class="mobile-nav-link" style="font-size: 1.1rem;">Home</a></li>
-            <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
-            <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem;">Plot Explorer</a></li>
-            <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem;">Amenities</a></li>
-            <li><a href="location.html" class="mobile-nav-link"
-                    style="font-size: 1.1rem; color: var(--primary-gold);">Location</a></li>
-            <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem;">Contact Us</a></li>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;">
+            <li><a href="index.html" class="mobile-nav-link"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link"><i class="bi bi-info-circle"></i> About Us</a></li>
+            <li><a href="plots.html" class="mobile-nav-link"><i class="bi bi-bounding-box-circles"></i> Plot Explorer</a></li>
+            <li><a href="amenities.html" class="mobile-nav-link"><i class="bi bi-stars"></i> Amenities</a></li>
+            <li><a href="location.html" class="mobile-nav-link active"><i class="bi bi-geo-alt"></i> Location</a></li>
+            <li><a href="contact.html" class="mobile-nav-link"><i class="bi bi-telephone"></i> Contact Us</a></li>
         </ul>
+
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+            <a href="tel:+917906683614" class="btn btn-primary" style="text-decoration: none;">
+                <i class="bi bi-telephone-outbound"></i> Call: +91 79066 83614
+            </a>
+            <button class="btn btn-outline" onclick="openBrochureModal()">
+                <i class="bi bi-download"></i> Download E-Brochure
+            </button>
+            <button class="btn btn-primary" onclick="openEnquireModal('Location Page')" style="background: var(--navy-gradient); color: #fff;">
+                <i class="bi bi-calendar-check"></i> Book Site Visit
+            </button>
+        </div>
     </aside>
 
     <!-- Subpage Hero Banner -->
@@ -278,7 +289,7 @@
         </div>
     </div>
 
-    <script src="assets/js/script.js?v=3.1"></script>
+    <script src="assets/js/script.js?v=3.2"></script>
 </body>
 
 </html>

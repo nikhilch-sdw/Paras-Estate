@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" href="assets/logo/paras-logo.png">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=3.1">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3.2">
 </head>
 <body>
 
@@ -64,14 +64,26 @@
             </button>
         </div>
 
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
-            <li><a href="index.html" class="mobile-nav-link" style="font-size: 1.1rem;">Home</a></li>
-            <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
-            <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem; color: var(--primary-gold);">Plot Explorer</a></li>
-            <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem;">Amenities</a></li>
-            <li><a href="location.html" class="mobile-nav-link" style="font-size: 1.1rem;">Location</a></li>
-            <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem;">Contact Us</a></li>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;">
+            <li><a href="index.html" class="mobile-nav-link"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link"><i class="bi bi-info-circle"></i> About Us</a></li>
+            <li><a href="plots.html" class="mobile-nav-link active"><i class="bi bi-bounding-box-circles"></i> Plot Explorer</a></li>
+            <li><a href="amenities.html" class="mobile-nav-link"><i class="bi bi-stars"></i> Amenities</a></li>
+            <li><a href="location.html" class="mobile-nav-link"><i class="bi bi-geo-alt"></i> Location</a></li>
+            <li><a href="contact.html" class="mobile-nav-link"><i class="bi bi-telephone"></i> Contact Us</a></li>
         </ul>
+
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+            <a href="tel:+917906683614" class="btn btn-primary" style="text-decoration: none;">
+                <i class="bi bi-telephone-outbound"></i> Call: +91 79066 83614
+            </a>
+            <button class="btn btn-outline" onclick="openBrochureModal()">
+                <i class="bi bi-download"></i> Download E-Brochure
+            </button>
+            <button class="btn btn-primary" onclick="openEnquireModal('Plot Explorer Page')" style="background: var(--navy-gradient); color: #fff;">
+                <i class="bi bi-calendar-check"></i> Book Site Visit
+            </button>
+        </div>
     </aside>
 
     <!-- Subpage Hero Banner -->
@@ -85,7 +97,7 @@
                         <li class="active">Plot Explorer</li>
                     </ol>
                 </nav>
-                <h1>Residential Plots & <span class="gold-text">Floor Guidelines</span></h1>
+                <h1>Explore Available <span class="gold-text">Plot Inventory</span></h1>
             </div>
         </div>
     </section>
@@ -93,14 +105,14 @@
     <!-- Visual Villa Render Showcase Card -->
     <section style="padding: 2rem 0 2.5rem 0; background: #ffffff;">
         <div class="container">
-            <div class="glass-card" style="padding: 3rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
-                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center;">
+            <div class="glass-card" style="padding: clamp(1.2rem, 3.5vw, 2.5rem); background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
+                <div class="responsive-2col-grid" style="gap: 2.5rem; align-items: center;">
                     <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-                        <img src="assets/images/villa.jpg" alt="Luxury Villa Architecture Render" style="width: 100%; height: 380px; object-fit: cover;">
+                        <img src="assets/images/villa.jpg" alt="Luxury Villa Architecture Render" style="width: 100%; height: 320px; max-height: 380px; object-fit: cover;">
                     </div>
                     <div>
                         <span class="section-tag">ARCHITECTURAL POTENTIAL</span>
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Stilt + 4 Floor <span class="gold-text">Villa Concept</span></h2>
+                        <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 1rem;">Stilt + 4 Floor <span class="gold-text">Villa Concept</span></h2>
                         <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7;">
                             Visualize your custom 4-storey luxury villa with private stilt parking for 4+ luxury cars, high-speed elevator provision, floor-wise sunlit balconies, and a terrace garden lounge.
                         </p>
@@ -233,6 +245,6 @@
         </div>
     </div>
 
-    <script src="assets/js/script.js?v=3.1"></script>
+    <script src="assets/js/script.js?v=3.2"></script>
 </body>
 </html>
