@@ -163,6 +163,7 @@ img {
     border: none;
     outline: none;
     text-align: center;
+    text-decoration: none;
 }
 
 .btn-primary {
