@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location & Connectivity | Paras Estate</title>
-    <meta name="description" content="Explore the strategic location advantage of Paras Estate: KMP Expressway (5 mins), Golf Course Ext. Rd (15 mins), IGI Airport (35 mins), and top educational hubs.">
-    
+    <meta name="description"
+        content="Explore the strategic location advantage of Paras Estate: KMP Expressway (5 mins), Golf Course Ext. Rd (15 mins), IGI Airport (35 mins), and top educational hubs.">
+
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo/paras-logo.png">
+
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
     <!-- Header Navigation -->
@@ -22,11 +30,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="brand-logo">
-                    <div class="brand-symbol">P</div>
-                    <div class="brand-name">
-                        <span class="brand-title">PARAS ESTATE</span>
-                        <span class="brand-sub">BY PARAS BUILDTECH</span>
-                    </div>
+                    <img src="assets/logo/paras-logo.png" alt="Paras Estate" class="brand-logo-img">
                 </a>
 
                 <ul class="nav-links">
@@ -57,13 +61,11 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <aside class="mobile-drawer" id="mobileDrawer">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div class="brand-logo">
-                <div class="brand-symbol">P</div>
-                <div class="brand-name">
-                    <span class="brand-title">PARAS ESTATE</span>
-                </div>
-            </div>
-            <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;" id="drawerClose">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo/paras-logo.png" alt="Paras Estate" class="brand-logo-img">
+            </a>
+            <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;"
+                id="drawerClose">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -73,39 +75,41 @@
             <li><a href="about.html" class="mobile-nav-link" style="font-size: 1.1rem;">About Us</a></li>
             <li><a href="plots.html" class="mobile-nav-link" style="font-size: 1.1rem;">Plot Explorer</a></li>
             <li><a href="amenities.html" class="mobile-nav-link" style="font-size: 1.1rem;">Amenities</a></li>
-            <li><a href="location.html" class="mobile-nav-link" style="font-size: 1.1rem; color: var(--primary-gold);">Location</a></li>
+            <li><a href="location.html" class="mobile-nav-link"
+                    style="font-size: 1.1rem; color: var(--primary-gold);">Location</a></li>
             <li><a href="contact.html" class="mobile-nav-link" style="font-size: 1.1rem;">Contact Us</a></li>
         </ul>
     </aside>
 
     <!-- Subpage Hero Banner -->
-    <section style="padding: 10rem 0 5rem 0; background: linear-gradient(to bottom, rgba(248, 250, 252, 0.85), #ffffff), url('assets/images/connect.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border-color);">
+    <section class="subpage-hero" style="background-image: linear-gradient(to bottom, rgba(237, 243, 250, 0.92), rgba(228, 237, 248, 0.95)), url('assets/images/connect.jpg');">
         <div class="container">
-            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <span class="section-tag"><i class="bi bi-geo-alt"></i> PRIME CONNECTIVITY</span>
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.2rem; color: var(--text-primary);">
-                    Strategic Location & <span class="gold-text">Transit Hubs</span>
-                </h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-                    Enjoy seamless multi-modal transit links to Delhi-NCR arterial expressways, international airports, corporate tech parks, and top-tier healthcare.
-                </p>
+            <div class="text-center subpage-hero-content">
+                <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                        <li class="separator"><i class="bi bi-chevron-right"></i></li>
+                        <li class="active">Location</li>
+                    </ol>
+                </nav>
+                <h1>Strategic Location & <span class="gold-text">Transit Hubs</span></h1>
             </div>
         </div>
     </section>
 
     <!-- Visual Location Feature Cards -->
-    <section style="padding: 5rem 0; background: #ffffff;">
+    <section class="location-feature-section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center;">
+            <div class="location-feature-grid">
                 <div>
                     <span class="section-tag">RAPID EXPRESSWAY ACCESSIBILITY</span>
                     <h2 class="section-title">Positioned On Growth <span class="gold-text">Corridors</span></h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.8;">
-                        Paras Estate, Meerut stands directly connected to major 100-meter wide arterial roads, enabling effortless commutes to Delhi-NCR, RRTS RapidX stations, and top academic institutes.
+                    <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
+                        Paras Estate, Meerut stands directly connected to major arterial expressways, enabling effortless commutes to Delhi-NCR, RRTS RapidX stations, and premier healthcare and academic institutions.
                     </p>
 
-                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <div class="matrix-item">
+                    <div class="location-feature-list">
+                        <div class="matrix-item compact">
                             <div class="matrix-info">
                                 <div class="matrix-icon"><i class="bi bi-signpost-split-fill"></i></div>
                                 <div>
@@ -116,7 +120,7 @@
                             <span class="matrix-time">2 Mins</span>
                         </div>
 
-                        <div class="matrix-item">
+                        <div class="matrix-item compact">
                             <div class="matrix-info">
                                 <div class="matrix-icon"><i class="bi bi-train-freight-front-fill"></i></div>
                                 <div>
@@ -127,18 +131,18 @@
                             <span class="matrix-time">5 Mins</span>
                         </div>
 
-                        <div class="matrix-item">
+                        <div class="matrix-item compact">
                             <div class="matrix-info">
                                 <div class="matrix-icon"><i class="bi bi-hospital-fill"></i></div>
                                 <div>
                                     <div class="matrix-title">Subharti University & Medical Hubs</div>
-                                    <div class="matrix-sub">Premier educational institutes & multi-specialty hospitals</div>
+                                    <div class="matrix-sub">Directly opposite the township & multi-specialty hospitals</div>
                                 </div>
                             </div>
-                            <span class="matrix-time">8 Mins</span>
+                            <span class="matrix-time">1 Min</span>
                         </div>
 
-                        <div class="matrix-item">
+                        <div class="matrix-item compact">
                             <div class="matrix-info">
                                 <div class="matrix-icon"><i class="bi bi-bag-check-fill"></i></div>
                                 <div>
@@ -151,31 +155,48 @@
                     </div>
                 </div>
 
-                <!-- Visual Image Card -->
-                <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-                    <img src="assets/images/connect.jpg" alt="Aerial Highway Connectivity View" style="width: 100%; height: 440px; object-fit: cover;">
+                <!-- Visual Image Card with Equal Section Height -->
+                <div class="location-visual-card">
+                    <img src="assets/images/connect.jpg" alt="Aerial Highway Connectivity View"
+                        class="location-visual-img">
+                    <div class="location-visual-overlay">
+                        <span class="location-visual-overlay-left">
+                            <i class="bi bi-geo-alt-fill"></i> NH-58 Express Corridor, Meerut
+                        </span>
+                        <span class="location-visual-overlay-badge">Direct Access</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Floating Quick Action Widget -->
+    <div class="floating-actions">
+        <a href="https://wa.me/917906683614?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
+            target="_blank" class="float-btn float-whatsapp" aria-label="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="tel:+917906683614" class="float-btn float-call" aria-label="Call Sales Office">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="brand-logo" style="margin-bottom: 1.2rem;">
-                        <div class="brand-symbol">P</div>
-                        <div class="brand-name">
-                            <span class="brand-title">PARAS ESTATE</span>
-                            <span class="brand-sub">PARAS BUILDTECH</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
-                        Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1.2rem; display: inline-block;">
+                        <img src="assets/logo/paras-logo.png" alt="Paras Estate"
+                            class="brand-logo-img brand-logo-footer">
+                    </a>
+                    <p class="footer-desc" style="font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 1.5rem;">
+                        Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering
+                        serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
                     </p>
-                    <div style="font-size: 0.85rem; color: #94a3b8;">
-                        <i class="bi bi-geo-alt"></i> 11th Floor, Paras Twin Towers (Tower B), Sec-54, Golf Course Road, Gurugram, Haryana - 122002
+                    <div class="footer-address" style="font-size: 0.88rem; color: #cbd5e1; display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5;">
+                        <i class="bi bi-geo-alt-fill" style="color: var(--primary-gold); margin-top: 2px; font-size: 1rem; flex-shrink: 0;"></i>
+                        <span>Delhi-Meerut Expressway Link Road, Meerut, Uttar Pradesh - 250002</span>
                     </div>
                 </div>
 
@@ -203,18 +224,21 @@
                 </div>
 
                 <div>
-                    <div class="footer-col-title">Corporate Contact</div>
+                    <div class="footer-col-title">Project Sales Office</div>
                     <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
-                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> +91 124 456 1500</div>
-                        <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i> info@parasbuildtech.com</div>
-                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sat: 9:30 AM - 6:30 PM</div>
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> <a href="tel:+917906683614" style="color: inherit; text-decoration: none;">+91 79066 83614</a></div>
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> <a href="tel:+917417070411" style="color: inherit; text-decoration: none;">+91 74170 70411</a></div>
+                        <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i>
+                            info@parasbuildtech.com</div>
+                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sun: 9:30 AM -
+                            7:00 PM</div>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>© 2026 Paras Buildtech India Pvt. Ltd. All rights reserved.</div>
-                <div>Disclaimer: Artistic impressions only. M/s Rapid Buildtech Pvt. Ltd. / M/s Paras Buildtech India Private Limited.</div>
+                <div>© 2026 Paras Estate. All rights reserved.</div>
+                <div>Designed And Developed By : <a href="https://smartdigitalwings.com/" target="_blank" rel="noopener noreferrer">Smart Digital Wings</a></div>
             </div>
         </div>
     </footer>
@@ -233,7 +257,8 @@
                     <label class="form-label">Phone Number *</label>
                     <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Inquiry</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit
+                    Inquiry</button>
             </form>
         </div>
     </div>
@@ -247,11 +272,13 @@
                     <label class="form-label">WhatsApp Mobile Number *</label>
                     <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Download PDF</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Download
+                    PDF</button>
             </form>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

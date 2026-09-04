@@ -256,7 +256,7 @@ function initEMICalculator() {
         const totalPayment = emi * n;
         const totalInterest = Math.max(0, totalPayment - loanPrincipal);
 
-        // 5-Year Estimated Value Appreciation (Assuming 12% p.a. CAGR for Gurugram Plotted Real Estate)
+        // 5-Year Estimated Value Appreciation (Assuming 12% p.a. CAGR for Meerut Plotted Real Estate)
         const estimated5YrVal = plotPrice * Math.pow(1.12, 5);
 
         // Update Labels
@@ -678,12 +678,12 @@ function showToast(message, duration = 4000) {
     }, duration);
 }
 
-// Hero Banner Form Submission Handler
+// Hero Banner / Consult Form Submission Handler
 window.handleHeroFormSubmit = function (e) {
     e.preventDefault();
-    const nameInput = document.getElementById('heroName');
-    const phoneInput = document.getElementById('heroPhone');
-    const addressInput = document.getElementById('heroAddress');
+    const nameInput = document.getElementById('heroName') || document.getElementById('consultName');
+    const phoneInput = document.getElementById('heroPhone') || document.getElementById('consultPhone');
+    const addressInput = document.getElementById('heroAddress') || document.getElementById('consultAddress');
 
     const name = nameInput ? nameInput.value.trim() : 'Valued Client';
     const phone = phoneInput ? phoneInput.value.trim() : '';
@@ -706,6 +706,28 @@ window.handleHeroFormSubmit = function (e) {
         }
     }, 1000);
 };
+
+// Ensure Hero Video Autoplays
+document.addEventListener('DOMContentLoaded', () => {
+    const heroVideo = document.querySelector('.hero-bg-video');
+    if (heroVideo) {
+        heroVideo.muted = true;
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                const onFirstInteraction = () => {
+                    heroVideo.play();
+                    window.removeEventListener('click', onFirstInteraction);
+                    window.removeEventListener('touchstart', onFirstInteraction);
+                    window.removeEventListener('scroll', onFirstInteraction);
+                };
+                window.addEventListener('click', onFirstInteraction);
+                window.addEventListener('touchstart', onFirstInteraction);
+                window.addEventListener('scroll', onFirstInteraction);
+            });
+        }
+    }
+});
 
 /* ==========================================================================
    6. FAQ Accordion Functionality

@@ -8,7 +8,7 @@
     <meta name="description"
         content="Explore luxury residential plots at Paras Estate by Paras Buildtech. Gated community, Stilt + 4 floor permission, prime connectivity, modern amenities, and supreme investment returns.">
     <meta name="keywords"
-        content="Paras Estate, Paras Buildtech, residential plots Gurugram, DDJAY plots, luxury plots, Golf Course Extension Road, Sohna plots">
+        content="Paras Estate, Paras Buildtech, residential plots Meerut, luxury plots Meerut, Delhi Meerut Expressway plots, RRTS RapidX Metro plots, Paras Estate Meerut">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Paras Estate | Luxury Residential Plotted Township">
@@ -25,8 +25,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo/paras-logo.png">
+
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -37,12 +40,8 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#hero" class="brand-logo">
-                    <div class="brand-symbol">P</div>
-                    <div class="brand-name">
-                        <span class="brand-title">PARAS ESTATE</span>
-                        <span class="brand-sub">BY PARAS BUILDTECH</span>
-                    </div>
+                <a href="index.html" class="brand-logo">
+                    <img src="assets/logo/paras-logo.png" alt="Paras Estate" class="brand-logo-img">
                 </a>
 
                 <ul class="nav-links">
@@ -73,12 +72,9 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <aside class="mobile-drawer" id="mobileDrawer">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div class="brand-logo">
-                <div class="brand-symbol">P</div>
-                <div class="brand-name">
-                    <span class="brand-title">PARAS ESTATE</span>
-                </div>
-            </div>
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo/paras-logo.png" alt="Paras Estate" class="brand-logo-img">
+            </a>
             <button style="background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem;"
                 id="drawerClose">
                 <i class="bi bi-x-lg"></i>
@@ -112,113 +108,9 @@
          ========================================================================== -->
     <section class="hero" id="hero">
         <div class="hero-bg">
-            <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/images/hero.jpg">
+            <video class="hero-bg-video" autoplay loop muted playsinline preload="auto" poster="assets/images/hero.jpg">
                 <source src="assets/videos/hero.mp4" type="video/mp4">
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
             </video>
-        </div>
-        <div class="hero-overlay"></div>
-
-        <div class="container">
-            <div class="hero-grid">
-                <!-- Left Side Content -->
-                <div class="hero-left">
-                    <div class="hero-badge">
-                        <span class="section-tag">
-                            <i class="bi bi-star-fill"></i> LUXURY PLOTTED TOWNSHIP • PARAS BUILDTECH
-                        </span>
-                    </div>
-
-                    <h1 class="hero-title">
-                        Paras Estate – Craft Your Legacy On <span class="gold-text">Prime Land</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Luxury residential plots featuring Stilt + 4 floor approval, individual floor registry, 3-tier
-                        gated security, and world-class township infrastructure.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#plots" class="btn btn-primary btn-sm">
-                            <i class="bi bi-grid-3x3-gap-fill"></i> Explore Available Plots
-                        </a>
-                        <button class="btn btn-outline btn-sm" onclick="openBrochureModal()">
-                            <i class="bi bi-file-earmark-pdf"></i> Download E-Brochure
-                        </button>
-                    </div>
-
-                    <div class="hero-stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">25 Acres</span>
-                            <span class="stat-label">Township</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">200-280</span>
-                            <span class="stat-label">Sq. Yds Plots</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">200</span>
-                            <span class="stat-label">Exclusive Plots</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+ Yrs</span>
-                            <span class="stat-label">Paras Legacy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side Form -->
-                <div class="hero-right">
-                    <div class="hero-form-card">
-                        <div class="hero-form-header">
-                            <span class="form-badge"><i class="bi bi-lightning-charge-fill"></i> INSTANT CALLBACK</span>
-                            <h3 class="hero-form-title">Book VIP Site Visit</h3>
-                        </div>
-
-                        <form id="heroBannerForm" class="hero-form" onsubmit="handleHeroFormSubmit(event)">
-                            <div class="form-group">
-                                <label for="heroName" class="form-label"><i class="bi bi-person-fill"></i> Full Name
-                                    *</label>
-                                <input type="text" id="heroName" class="form-input" placeholder="e.g. Rahul Sharma"
-                                    required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="heroPhone" class="form-label"><i class="bi bi-telephone-fill"></i> Phone
-                                    Number *</label>
-                                <input type="tel" id="heroPhone" class="form-input" placeholder="e.g. +91 98765 43210"
-                                    pattern="[0-9+\s-]{10,15}" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="heroAddress" class="form-label"><i class="bi bi-geo-alt-fill"></i> Address
-                                    *</label>
-                                <input type="text" id="heroAddress" class="form-input"
-                                    placeholder="e.g. Sector 54, Gurugram" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block hero-submit-btn">
-                                <i class="bi bi-send-fill"></i> Get Instant Callback
-                            </button>
-
-                            <div class="form-divider">
-                                <span>OR</span>
-                            </div>
-
-                            <a href="https://wa.me/911244561500?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
-                                target="_blank" rel="noopener noreferrer"
-                                class="btn btn-whatsapp btn-block hero-whatsapp-btn">
-                                <i class="bi bi-whatsapp"></i> Connect On WhatsApp
-                            </a>
-
-                            <div class="form-privacy">
-                                <i class="bi bi-shield-lock-fill"></i> 100% Privacy Guaranteed • Direct Developer
-                                Enquiry
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -336,7 +228,7 @@
                     <div class="amenity-img-box">
                         <img src="assets/images/Meerut Estate Broucher_A4_compressed_page-0030.jpg"
                             alt="Grand Swimming Pool and Clubhouse" class="amenity-card-img">
-                        <span class="amenity-badge" style="background: rgba(184, 134, 11, 0.95);">FIRST CLUBHOUSE</span>
+                        <span class="amenity-badge" style="background: rgba(33, 62, 125, 0.95);">FIRST CLUBHOUSE</span>
                     </div>
                     <div class="amenity-card-body">
                         <h3 class="amenity-card-title">Grand Clubhouse & Pool</h3>
@@ -475,7 +367,7 @@
                 </div>
 
                 <div class="whatsapp-cta-actions">
-                    <a href="https://wa.me/911244561500?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
+                    <a href="https://wa.me/917906683614?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
                         target="_blank" class="btn btn-whatsapp btn-lg">
                         <i class="bi bi-whatsapp"></i> Chat on WhatsApp Instant
                     </a>
@@ -526,11 +418,10 @@
                                 <div class="matrix-icon"><i class="bi bi-hospital-fill"></i></div>
                                 <div>
                                     <div class="matrix-title">Subharti University & Medical Hubs</div>
-                                    <div class="matrix-sub">Premier educational institutes & multi-specialty hospitals
-                                    </div>
+                                    <div class="matrix-sub">Directly opposite the township & multi-specialty hospitals</div>
                                 </div>
                             </div>
-                            <span class="matrix-time">8 Mins</span>
+                            <span class="matrix-time">1 Min</span>
                         </div>
 
                         <div class="matrix-item">
@@ -590,7 +481,7 @@
                             <i class="bi bi-hospital-fill"></i>
                             <div>
                                 <span class="chip-title">Subharti Univ.</span>
-                                <span class="chip-time">8 Mins</span>
+                                <span class="chip-time">1 Min</span>
                             </div>
                         </div>
 
@@ -966,11 +857,11 @@
 
     <!-- Floating Quick Actions -->
     <div class="floating-actions">
-        <a href="https://wa.me/911244561500?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
+        <a href="https://wa.me/917906683614?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
             target="_blank" class="float-btn float-whatsapp" aria-label="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>
         </a>
-        <a href="tel:+911244561500" class="float-btn float-call" aria-label="Call Sales Office">
+        <a href="tel:+917906683614" class="float-btn float-call" aria-label="Call Sales Office">
             <i class="bi bi-telephone-fill"></i>
         </a>
     </div>
@@ -1022,9 +913,7 @@
                         <i class="bi bi-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Paras Estate enjoys prime strategic positioning with rapid signal-free access to the
-                            Delhi-Meerut Expressway (approx. 5 minutes) and the Meerut RapidX RRTS Metro Station
-                            (approx. 8 minutes), reducing travel time to Delhi NCR significantly.</p>
+                        <p>Paras Estate enjoys prime strategic positioning directly opposite Subharti University & Medical Hubs (approx. 1 minute), with rapid signal-free access to the Delhi-Meerut Expressway (approx. 2 minutes) and the Meerut RapidX RRTS Metro Station (approx. 5 minutes), making travel to Delhi-NCR effortless.</p>
                     </div>
                 </div>
 
@@ -1076,12 +965,15 @@
     <section class="contact-consult-section" id="contact">
         <div class="container">
             <div class="contact-consult-grid">
-                
+
                 <!-- Left Side: Content & Contact Details -->
                 <div class="consult-left-col">
                     <span class="section-tag">EXECUTIVE CONSULTATION</span>
-                    <h2 class="section-title">Schedule Your Exclusive <span class="gold-text">Paras Estate Site Visit</span></h2>
-                    <p class="section-subtitle" style="margin-bottom: 1.5rem;">Experience 25 acres of planned luxury plotted development in Meerut. Connect with our senior advisors for instant pricing, plot selection & floor plans.</p>
+                    <h2 class="section-title">Schedule Your Exclusive <span class="gold-text">Paras Estate Site
+                            Visit</span></h2>
+                    <p class="section-subtitle" style="margin-bottom: 1.5rem;">Experience 25 acres of planned luxury
+                        plotted development in Meerut. Connect with our senior advisors for instant pricing, plot
+                        selection & floor plans.</p>
 
                     <div class="consult-info-cards">
                         <div class="consult-info-item">
@@ -1096,7 +988,7 @@
                             <div class="consult-info-icon"><i class="bi bi-telephone-fill"></i></div>
                             <div>
                                 <h4>Direct Sales Helpline</h4>
-                                <p>+91 124 456 1500 (Mon - Sat, 9:30 AM - 6:30 PM)</p>
+                                <p><a href="tel:+917906683614" style="color: inherit; text-decoration: none;">+91 79066 83614</a> / <a href="tel:+917417070411" style="color: inherit; text-decoration: none;">+91 74170 70411</a></p>
                             </div>
                         </div>
 
@@ -1115,7 +1007,8 @@
                     <div class="contact-form-card">
                         <div class="form-header">
                             <h3 class="form-title">Request Priority Site Tour</h3>
-                            <p class="form-sub">Get official price sheet, plot availability & brochure PDF instantly.</p>
+                            <p class="form-sub">Get official price sheet, plot availability & brochure PDF instantly.
+                            </p>
                         </div>
 
                         <form id="bottomConsultForm" onsubmit="handleHeroFormSubmit(event)">
@@ -1131,7 +1024,8 @@
                                 <label for="consultPhone">Phone Number *</label>
                                 <div class="input-with-icon">
                                     <i class="bi bi-telephone-fill"></i>
-                                    <input type="tel" id="consultPhone" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}">
+                                    <input type="tel" id="consultPhone" placeholder="Enter 10-digit mobile number"
+                                        required pattern="[0-9]{10}">
                                 </div>
                             </div>
 
@@ -1139,7 +1033,8 @@
                                 <label for="consultAddress">Current Address / City</label>
                                 <div class="input-with-icon">
                                     <i class="bi bi-geo-alt"></i>
-                                    <input type="text" id="consultAddress" placeholder="Enter your city (e.g. Meerut, Delhi)">
+                                    <input type="text" id="consultAddress"
+                                        placeholder="Enter your city (e.g. Meerut, Delhi)">
                                 </div>
                             </div>
 
@@ -1163,7 +1058,7 @@
                                 <span>OR</span>
                             </div>
 
-                            <a href="https://wa.me/911244561500?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
+                            <a href="https://wa.me/917906683614?text=Hi,%20I%20am%20interested%20in%20Paras%20Estate%20residential%20plots."
                                 target="_blank" class="btn btn-whatsapp btn-block">
                                 <i class="bi bi-whatsapp"></i> Chat on WhatsApp Instant
                             </a>
@@ -1182,21 +1077,17 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="brand-logo" style="margin-bottom: 1.2rem;">
-                        <div class="brand-symbol">P</div>
-                        <div class="brand-name">
-                            <span class="brand-title">PARAS ESTATE</span>
-                            <span class="brand-sub">PARAS BUILDTECH</span>
-                        </div>
-                    </div>
-                    <p
-                        style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1.2rem; display: inline-block;">
+                        <img src="assets/logo/paras-logo.png" alt="Paras Estate"
+                            class="brand-logo-img brand-logo-footer">
+                    </a>
+                    <p class="footer-desc" style="font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 1.5rem;">
                         Paras Estate is a premier planned residential plotted community by Paras Buildtech. Offering
                         serene open land, Stilt + 4 floor building authorization, and supreme connectivity.
                     </p>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="bi bi-geo-alt"></i> 11th Floor, Paras Twin Towers (Tower B), Sec-54, Golf Course Road,
-                        Gurugram, Haryana - 122002
+                    <div class="footer-address" style="font-size: 0.88rem; color: #cbd5e1; display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5;">
+                        <i class="bi bi-geo-alt-fill" style="color: var(--primary-gold); margin-top: 2px; font-size: 1rem; flex-shrink: 0;"></i>
+                        <span>Delhi-Meerut Expressway Link Road, Meerut, Uttar Pradesh - 250002</span>
                     </div>
                 </div>
 
@@ -1224,22 +1115,21 @@
                 </div>
 
                 <div>
-                    <div class="footer-col-title">Corporate Contact</div>
+                    <div class="footer-col-title">Project Sales Office</div>
                     <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.85rem;">
-                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> +91 124 456 1500
-                        </div>
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> <a href="tel:+917906683614" style="color: inherit; text-decoration: none;">+91 79066 83614</a></div>
+                        <div><i class="bi bi-telephone-fill" style="color: var(--primary-gold);"></i> <a href="tel:+917417070411" style="color: inherit; text-decoration: none;">+91 74170 70411</a></div>
                         <div><i class="bi bi-envelope-fill" style="color: var(--primary-gold);"></i>
                             info@parasbuildtech.com</div>
-                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sat: 9:30 AM -
-                            6:30 PM</div>
+                        <div><i class="bi bi-clock-fill" style="color: var(--primary-gold);"></i> Mon - Sun: 9:30 AM -
+                            7:00 PM</div>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>© 2026 Paras Buildtech India Pvt. Ltd. All rights reserved.</div>
-                <div>Disclaimer: Artistic impressions only. M/s Rapid Buildtech Pvt. Ltd. / M/s Paras Buildtech India
-                    Private Limited.</div>
+                <div>© 2026 Paras Estate. All rights reserved.</div>
+                <div>Designed And Developed By : <a href="https://smartdigitalwings.com/" target="_blank" rel="noopener noreferrer">Smart Digital Wings</a></div>
             </div>
         </div>
         <!-- ==========================================================================
@@ -1290,7 +1180,7 @@
         </div>
 
         <!-- Core Script -->
-        <script src="script.js"></script>
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>
