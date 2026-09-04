@@ -128,12 +128,12 @@ img {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     color: var(--text-primary);
 }
 
@@ -141,7 +141,7 @@ img {
     font-size: 1.1rem;
     color: var(--text-secondary);
     max-width: 650px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 1.8rem auto;
 }
 
 .text-center {
@@ -829,7 +829,7 @@ img {
    Overview Section - Balanced Equal Height Layout
    ========================================================================== */
 .overview {
-    padding: 5.5rem 0;
+    padding: 3.2rem 0;
     position: relative;
     background: #ffffff;
 }
@@ -966,7 +966,7 @@ img {
    Interactive Plot Explorer - Compact & Premium 3-Column Layout
    ========================================================================== */
 .plot-explorer {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
     background: radial-gradient(ellipse at top, rgba(33, 62, 125, 0.06) 0%, #f8fafc 70%);
 }
 
@@ -1120,7 +1120,7 @@ img {
    Amenities Section - Premium Image Hover Effects & 2-Line Text
    ========================================================================== */
 .amenities {
-    padding: 5.5rem 0;
+    padding: 3.2rem 0;
     position: relative;
     background: #ffffff;
 }
@@ -1129,7 +1129,7 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 .amenity-card {
@@ -1222,7 +1222,7 @@ img {
    Mid-Page WhatsApp Instant Consultation CTA Banner
    ========================================================================== */
 .whatsapp-cta-section {
-    padding: 3rem 0;
+    padding: 1.8rem 0;
     background: #ffffff;
     border-top: 1px solid var(--border-glass);
     border-bottom: 1px solid var(--border-glass);
@@ -1335,7 +1335,7 @@ img {
    Location & Strategic Matrix
    ========================================================================== */
 .location {
-    padding: 7rem 0;
+    padding: 3.2rem 0;
     background: #f8fafc;
     border-top: 1px solid var(--border-glass);
     border-bottom: 1px solid var(--border-glass);
@@ -1412,7 +1412,7 @@ img {
 
 /* Compact Matrix & Equal Height Feature Section */
 .location-feature-section {
-    padding: 2.2rem 0 4rem 0;
+    padding: 2rem 0 2.5rem 0;
     background: #ffffff;
 }
 
@@ -1840,7 +1840,7 @@ img {
    EMI & Investment ROI Calculator
    ========================================================================== */
 .calculator {
-    padding: 7rem 0;
+    padding: 3.2rem 0;
     background: #ffffff;
 }
 
@@ -1954,7 +1954,7 @@ img {
    Multi-Category Gallery & Fullscreen Lightbox Carousel
    ========================================================================== */
 .gallery {
-    padding: 5.5rem 0;
+    padding: 3.2rem 0;
     background: #f8fafc;
 }
 
@@ -1963,8 +1963,8 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.6rem;
 }
 
 .gallery-grid {
@@ -2396,7 +2396,7 @@ img {
    ========================================================================== */
 /* Minimalist Developer Legacy Section */
 .legacy-section {
-    padding: 3.5rem 0;
+    padding: 2.8rem 0;
     background: #ffffff;
     border-top: 1px solid var(--border-glass);
 }
@@ -2405,7 +2405,7 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .legacy-stat-card {
@@ -2467,14 +2467,14 @@ img {
    Frequently Asked Questions (FAQ) Section
    ========================================================================== */
 .faq-section {
-    padding: 5.5rem 0;
+    padding: 3.2rem 0;
     background: #f8fafc;
     border-top: 1px solid var(--border-glass);
 }
 
 .faq-accordion-wrapper {
     max-width: 860px;
-    margin: 3rem auto 0 auto;
+    margin: 1.8rem auto 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -2541,7 +2541,7 @@ img {
    Executive Site Tour & Consultation Section (After FAQ)
    ========================================================================== */
 .contact-consult-section {
-    padding: 6rem 0;
+    padding: 3.5rem 0;
     background: #ffffff;
     border-top: 1px solid var(--border-glass);
 }
@@ -2889,7 +2889,7 @@ img {
 .footer {
     background: #0f172a;
     border-top: 1px solid var(--border-color);
-    padding: 5rem 0 2rem 0;
+    padding: 3.5rem 0 2rem 0;
     font-size: 0.9rem;
     color: #94a3b8;
 }
@@ -2898,7 +2898,7 @@ img {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .footer-desc {
